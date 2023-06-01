@@ -18,6 +18,12 @@ public class AppConfig {
 	@Value("${redis.port}")
 	private Integer redisPort;
 
+	@Value("${redis.username}")
+    private String redisUsername;
+
+    @Value("${redis.password}")
+    private String redisPassword;
+
 	@Value("${redis.database}")
 	private Integer redisDB;
 
@@ -28,6 +34,11 @@ public class AppConfig {
 	public RedisTemplate<String, String> createRedisTemplate() {
 		RedisStandaloneConfiguration config = new RedisStandaloneConfiguration(redisHost, redisPort);
 		config.setDatabase(redisDB);
+
+		if(!redisUsername.isEmpty() && !redisPassword.isEmpty()){
+            config.setUsername(redisUsername);
+            config.setPassword(redisPassword);
+        }
 
 		JedisClientConfiguration jedisClient = JedisClientConfiguration
 				.builder().build();

@@ -1,15 +1,11 @@
 package ibf2022.batch3.assessment.csf.orderbackend.respositories;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
