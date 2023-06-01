@@ -40,7 +40,7 @@ public class PizzaOrder {
 	public Boolean getThickCrust() { return this.thickCrust; }
 	public Boolean isThickCrust() { return this.thickCrust; }
 
-	public void setTopplings(List<String> toppings) { this.toppings = toppings; }
+	public void setToppings(List<String> toppings) { this.toppings = toppings; }
 	public List<String> getTopplings() { return this.toppings; }
 	public void addTopping(String topping) { this.toppings.add(topping); }
 
