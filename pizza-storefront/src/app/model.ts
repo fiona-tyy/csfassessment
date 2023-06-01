@@ -15,3 +15,9 @@ export interface PizzaResponse {
   email: string;
   total: number;
 }
+
+export interface PizzaOrderSummary {
+  orderId: string;
+  date: number;
+  total: number;
+}

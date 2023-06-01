@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PizzaService } from './pizza.service';
+import { EpochDatePipe } from './epoch-date.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -16,12 +17,12 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, OrdersComponent],
+  declarations: [AppComponent, MainComponent, OrdersComponent, EpochDatePipe],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
   ],
 
   providers: [PizzaService],

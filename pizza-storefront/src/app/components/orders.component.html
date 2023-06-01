@@ -1,1 +1,33 @@
-<p>orders works!</p>
+<h2>Orders for {{ email }}</h2>
+
+<div *ngIf="orderList$ | async as orders; else noOrders">
+  <div
+    *ngFor="let o of orders"
+    style="margin: 10px; border: solid grey; border-radius: 5px; padding: 5px"
+  >
+    Date: {{ o.date | epochDate | date : "longDate" }}
+    <br />
+    Order Id: {{ o.orderId }}
+    <span
+      ><button
+        type="button"
+        (click)="delivered(o.orderId)"
+        style="margin-left: 20px"
+      >
+        Delivered
+      </button></span
+    >
+    <br />
+    $ {{ o.total }}
+    <br />
+  </div>
+</div>
+<br />
+<br />
+<div>
+  <button [routerLink]="['/']">Back to Ordering</button>
+</div>
+
+<ng-template #noOrders>
+  <h3>You have no pending orders</h3>
+</ng-template>

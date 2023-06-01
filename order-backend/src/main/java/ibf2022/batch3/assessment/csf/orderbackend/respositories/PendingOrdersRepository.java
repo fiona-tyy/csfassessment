@@ -23,7 +23,7 @@ public class PendingOrdersRepository {
 	// WARNING: Do not change the method's signature.
 	public void add(PizzaOrder order) {
 		JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
-		for(String topping : order.getTopplings()){
+		for(String topping : order.getToppings()){
 			arrBuilder.add(topping);
 		}
 		JsonObject obj = Json.createObjectBuilder()

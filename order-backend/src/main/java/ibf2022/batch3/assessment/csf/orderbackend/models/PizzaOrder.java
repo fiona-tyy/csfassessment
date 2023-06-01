@@ -41,7 +41,7 @@ public class PizzaOrder {
 	public Boolean isThickCrust() { return this.thickCrust; }
 
 	public void setToppings(List<String> toppings) { this.toppings = toppings; }
-	public List<String> getTopplings() { return this.toppings; }
+	public List<String> getToppings() { return this.toppings; }
 	public void addTopping(String topping) { this.toppings.add(topping); }
 
 	public void setComments(String comments) { this.comments = comments; }
